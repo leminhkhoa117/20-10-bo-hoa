@@ -13,11 +13,11 @@ export const LETTER_TEMPLATES = [
   },
   {
     lines: [
-      'Nhân ngày 20/10, mình gửi bạn một bó hoa nhỏ.',
-      'Chẳng có gì to tát, chỉ là muốn nói rằng bạn làm tốt lắm.',
-      'Cảm ơn bạn vì những lần giúp đỡ mà chẳng đòi hỏi điều gì.',
+      'Nhân ngày 20/10, chúc bạn một ngày thật nhiều niềm vui.',
+      'Chúc bạn luôn xinh đẹp, rạng rỡ và tự tin như bây giờ.',
+      'Chúc công việc thuận lợi và mọi dự định đều thành công.',
       'Mong bạn luôn khoẻ, luôn vui và gặp nhiều điều may.',
-      'Chúc bạn một ngày 20/10 thật trọn vẹn.',
+      'Chúc bạn ngày 20/10 thật rạng rỡ và vui vẻ!',
     ],
   },
   {

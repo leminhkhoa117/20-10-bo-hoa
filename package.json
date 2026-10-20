@@ -2,7 +2,8 @@
   "name": "happy-2010",
   "private": true,
   "version": "1.0.0",
-  "description": "Trang web 3D chúc mừng ngày 20/10 với hiệu ứng vườn hoa, lá thư bay",
+  "type": "module",
+  "description": "20/10 — bó hoa SVG và lá thư mở dạng modal (React + Vite)",
   "workspaces": [
     "client",
     "server"
