@@ -90,7 +90,7 @@ export default function App() {
       <p className="sr-only" role="status" aria-live="polite">
         {stage === 'welcome'
           ? 'Trang chúc mừng ngày 20 tháng 10. Nhập tên của bạn để nhận bó hoa và lá thư.'
-          : `Bó hoa và lá thư dành cho ${name}. Chạm vào bó hoa để mở lá thư.`}
+          : `Bó hoa và lá thư dành cho ${name}. Cuộn xuống để mở lá thư.`}
       </p>
     </div>
   )

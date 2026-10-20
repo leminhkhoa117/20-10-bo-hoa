@@ -68,14 +68,12 @@ async function runFlow() {
   await shot('02-hero')
 
   // cuộn xuống phần lá thư
-  await page.evaluate(() => document.querySelector('#letter')?.scrollIntoView({ behavior: 'smooth' }))
+  await page.click('.scroll-cue')
   await sleep(1400)
   await shot('03-letter-section')
 
-  // mở lá thư bằng bó hoa
-  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
-  await sleep(700)
-  await page.click('.hero__bouquet')
+  // mở lá thư từ phong bì ở phần lá thư
+  await page.click('.env-card')
   await sleep(900)
   await shot('04-envelope')
 

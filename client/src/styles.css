@@ -117,7 +117,6 @@ input {
 .sound-toggle:focus-visible,
 .env-front:focus-visible,
 .env-card:focus-visible,
-.hero__bouquet:focus-visible,
 .field__input:focus-visible,
 .scroll-cue:focus-visible,
 .letter-modal__close:focus-visible {
@@ -408,11 +407,9 @@ input {
   display: block;
   margin: 0 auto;
   padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   animation: bouquetFloat 7s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
 }
 
 .hero__bouquet svg {
@@ -421,24 +418,6 @@ input {
   height: min(56vh, 540px);
   max-width: 90vw;
   filter: drop-shadow(0 30px 40px rgba(176, 84, 120, 0.22));
-}
-
-.hero__bouquet:hover {
-  transform: scale(1.035) translateY(-4px);
-}
-
-.hero__bouquet:hover .hero__shine {
-  opacity: 1;
-}
-
-.hero__shine {
-  position: absolute;
-  inset: 8% 12% 22%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 65%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
 }
 
 @keyframes bouquetFloat {
@@ -451,28 +430,33 @@ input {
   }
 }
 
-.hero__hint {
-  position: relative;
-  z-index: 2;
-  margin: 8px 0 0;
-  color: var(--rose-deep);
-  font-size: 0.86rem;
-  font-weight: 600;
-}
-
+/* Nút "cuộn xuống" — cách duy nhất để mở lá thư */
 .scroll-cue {
   position: relative;
   z-index: 2;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  margin-top: 14px;
-  color: var(--ink-faint);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 11px 24px;
+  border: 1px solid var(--card-line);
+  border-radius: 999px;
+  color: var(--rose-deep);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-decoration: none;
-  animation: cueBounce 2.4s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  transition: background 0.25s ease, transform 0.25s ease;
+  animation: cueBounce 2.6s ease-in-out infinite;
+}
+
+.scroll-cue:hover {
+  background: #fff;
+  transform: translateY(2px);
 }
 
 .scroll-cue svg {
@@ -483,7 +467,7 @@ input {
   0%,
   100% {
     transform: translateY(0);
-    opacity: 0.85;
+    opacity: 0.9;
   }
   50% {
     transform: translateY(6px);

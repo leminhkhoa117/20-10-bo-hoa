@@ -53,17 +53,12 @@ export default function Landing({ name, letter, soundOn, onToggleSound, onOpenLe
             <p className="hero__sub">Một bó hoa nhỏ — và một lá thư tay.</p>
           </div>
 
-          <button type="button" className="hero__bouquet" onClick={onOpenLetter} aria-label="Mở lá thư">
+          <div className="hero__bouquet" aria-hidden="true">
             <BouquetArt palette={letter?.bouquet} />
-            <span className="hero__shine" aria-hidden="true" />
-          </button>
+          </div>
 
-          <p className="hero__hint">
-            <span aria-hidden="true">✿</span> Chạm vào bó hoa để mở lá thư
-          </p>
-
-          <a className="scroll-cue" href="#letter" aria-label="Cuộn xuống phần lá thư">
-            <span>Cuộn xuống để xem lá thư</span>
+          <a className="scroll-cue" href="#letter" aria-label="Cuộn xuống để mở lá thư">
+            <span>Cuộn xuống để mở lá thư</span>
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M12 5v14M6 13l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
