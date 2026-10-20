@@ -52,8 +52,6 @@ export default function Welcome({ onStart, savedName = '' }) {
         <button className="btn btn--primary btn--wide" type="submit">
           Cắm bó hoa cho bạn <span aria-hidden="true">💐</span>
         </button>
-
-        <p className="welcome__hint">Trang có nhạc nền nhẹ nhàng — bật loa to một chút nhé 🎵</p>
       </form>
     </div>
   )
