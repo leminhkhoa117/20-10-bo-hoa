@@ -2,6 +2,8 @@
 
 Landing page chúc mừng ngày 20 tháng 10: nhập tên → **bó hoa hồng** (vẽ bằng SVG) → cuộn xuống **lá thư** → mở thư, nền tối lại và lời chúc hiện dần từng dòng.
 
+**🔗 Bản chạy thật: <https://leminhkhoa117.github.io/20-10-bo-hoa/>**
+
 > Không dùng WebGL/three.js: bó hoa, phong bì và lá thư đều là **SVG + CSS**, nên trang nhẹ (~78 KB gzip), tải nhanh và sắc nét ở mọi độ phân giải.
 
 ---
@@ -74,12 +76,25 @@ Mở **http://localhost:5173**.
 npm start            # build client rồi chạy server tại http://localhost:5174
 ```
 
+### Deploy lên GitHub Pages
+
+Repo đã có sẵn workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): mỗi lần push lên `main`, GitHub Actions build client ở **chế độ tĩnh** (`VITE_STATIC=1`, `BASE_PATH=/<tên-repo>/`) rồi deploy `client/dist` lên Pages.
+
+- Bản tĩnh tự sinh lá thư ngay trên trình duyệt bằng `shared/letters.js` (dùng chung với server) nên **không cần backend** vẫn có thư riêng theo tên.
+- Bật Pages: **Settings → Pages → Source: GitHub Actions** (đã bật sẵn cho repo này).
+- Đổi tên repo thì workflow tự đổi `BASE_PATH` theo tên repo mới.
+
+```bash
+git add -A && git commit -m "update" && git push
+```
+
 ### Kiểm thử giao diện tự động
 
 ```bash
 npm run visual                                   # 1280x800
 node scripts/visual-test.mjs --name=wide --width=1920 --height=900
 node scripts/visual-test.mjs --name=mobile --width=390 --height=844
+node scripts/visual-test.mjs --name=live --url=https://leminhkhoa117.github.io/20-10-bo-hoa/
 ```
 
 Ảnh lưu vào `dev-shots/`.

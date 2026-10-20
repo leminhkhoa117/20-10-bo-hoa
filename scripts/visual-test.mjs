@@ -98,13 +98,13 @@ async function runFlow() {
   const state = await page.evaluate(() => ({
     sheet: document.querySelector('.letter-sheet')?.innerText.slice(0, 140) ?? null,
     modal: Boolean(document.querySelector('.letter-modal')),
-    closeBtn: Boolean(document.querySelector('.letter-modal__actions')),
+    closeBtn: Boolean(document.querySelector('.letter-sheet__actions .btn')),
   }))
   console.log('\n--- trạng thái ---')
   console.log(JSON.stringify(state, null, 2))
 
   if (state.closeBtn) {
-    await page.click('.letter-modal__actions .btn')
+    await page.click('.letter-sheet__actions .btn')
     await sleep(700)
   }
 
