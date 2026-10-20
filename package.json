@@ -1,0 +1,23 @@
+{
+  "name": "happy-2010",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Trang web 3D chúc mừng ngày 20/10 với hiệu ứng vườn hoa, lá thư bay",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"magenta,cyan\" \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm run dev --workspace server",
+    "dev:client": "npm run dev --workspace client",
+    "build": "npm run build --workspace client",
+    "start": "npm run build && npm run start --workspace server",
+    "visual": "node scripts/visual-test.mjs",
+    "fonts": "node scripts/fetch-fonts.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "puppeteer-core": "^25.14.0"
+  }
+}
